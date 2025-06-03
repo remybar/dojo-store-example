@@ -1,5 +1,7 @@
 use starknet::ContractAddress;
 
+// In Dojo 1.5.0, the default value for an enum is the first variant,
+// so here: `None`.
 #[derive(Serde, Copy, Drop, Introspect, PartialEq, Debug)]
 pub enum Direction {
     None,
@@ -9,12 +11,17 @@ pub enum Direction {
     Down,
 }
 
+// In Dojo 1.5.0, if an unitialized WeaponStat is read,
+// the extra field will be set to `Some(0)` due to the way
+// Option<T> is defined in Cairo.
 #[derive(Serde, Copy, Drop, Introspect, PartialEq, Debug)]
 pub struct WeaponStat {
     damage: u32,
-    extra: Option<u32>
+    extra: Option<u32>,
 }
 
+// In Dojo 1.5.0, the default value for an enum is the first variant,
+// so here: `Sword(WeaponStat{ damage: 0, extra: Some(0) })`.
 #[derive(Serde, Copy, Drop, Introspect, PartialEq, Debug)]
 pub enum Weapon {
     Sword: WeaponStat,
@@ -22,7 +29,7 @@ pub enum Weapon {
     Knife: WeaponStat,
     Axe: WeaponStat,
     Mace: WeaponStat,
-    Spear: WeaponStat
+    Spear: WeaponStat,
 }
 
 #[derive(Copy, Drop, Serde, Debug)]
@@ -41,6 +48,8 @@ pub struct PlayerItem {
     pub score: Option<i32>,
 }
 
+// In Dojo 1.5.0 like for the `extra` field of the `WeaponStat` struct,
+// the default value of `favorite_item` is `Some(0)`.
 #[derive(Drop, Serde)]
 #[dojo::model]
 pub struct PlayerConfig {
