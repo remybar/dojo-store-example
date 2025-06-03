@@ -1,15 +1,18 @@
 [package]
 name = "dojo_store_example"
 
-version = "1.5.0"
+version = "1.6.0"
 edition = "2024_07"
-cairo-version = "=2.10.1"
+cairo-version = "=2.11.4"
 
 [cairo]
 sierra-replace-ids = true
 
 [dependencies]
-dojo = { git = "https://github.com/dojoengine/dojo", tag = "v1.5.0" }
+starknet = "=2.11.4"
+
+dojo = { git = "https://github.com/dojoengine/dojo", rev = "a65b0637e10879397feafb3295293e20def3b2a1" }
+dojo_macros = { git = "https://github.com/dojoengine/dojo", rev = "a65b0637e10879397feafb3295293e20def3b2a1" }
 
 [[target.starknet-contract]]
 build-external-contracts = ["dojo::world::world_contract::world"]
