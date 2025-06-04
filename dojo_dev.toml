@@ -15,3 +15,6 @@ world_address = "0x10e21be7af56ea9642ace5589d8f6db55e4823e84c81fcbaad0254b618fc1
 #ipfs_config.url = "https://ipfs.infura.io:5001"
 #ipfs_config.username = "2EBrzr7ZASQZKH32sl2xWauXPSA"
 #ipfs_config.password = "12290b883db9138a8ae3363b6739d220"
+
+[writers]
+"ns" = [ "ns-actions" ]

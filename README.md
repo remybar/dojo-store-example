@@ -1,0 +1,1 @@
+Simple project using Dojo 1.5.0 used as a base to test and show how to migrate to Dojo 1.6.0 and its new storage mechanism through the DojoStore trait.

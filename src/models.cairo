@@ -16,8 +16,8 @@ pub enum Direction {
 // Option<T> is defined in Cairo.
 #[derive(Serde, Copy, Drop, Introspect, PartialEq, Debug)]
 pub struct WeaponStat {
-    damage: u32,
-    extra: Option<u32>,
+    pub damage: u32,
+    pub extra: Option<u32>,
 }
 
 // In Dojo 1.5.0, the default value for an enum is the first variant,
@@ -48,7 +48,7 @@ pub struct PlayerItem {
     pub score: Option<i32>,
 }
 
-// In Dojo 1.5.0 like for the `extra` field of the `WeaponStat` struct,
+// In Dojo 1.5.0, like for the `extra` field of the `WeaponStat` struct,
 // the default value of `favorite_item` is `Some(0)`.
 #[derive(Drop, Serde)]
 #[dojo::model]
